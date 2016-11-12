@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { LoginService } from './login.service';
 
 @Component({
   moduleId: module.id,
   selector: 'my-app',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
 })
 export class LoginComponent {
 
@@ -26,7 +27,7 @@ export class LoginComponent {
 		  userLogin : FormGroup;
 
 		  // We are passing an instance of the FormBuilder to our constructor
-		  constructor(fb: FormBuilder){
+		  constructor(fb: FormBuilder, private loginService: LoginService){
 		    // Here we are using the FormBuilder to build out our form.
 		    this.userLogin = fb.group({
 		      // We can set default values by passing in the corresponding value or leave blank if we wish to not set the value. For our example, we’ll default the gender to female.
@@ -39,8 +40,17 @@ export class LoginComponent {
 
 	 validateLogin(value: any):void{
 	 	//call for service here and return whether login is success or not
-	    console.log('Reactive Form Data: ');
-	    console.log(value);
+	    //console.log('Reactive Form Data: ');
+	    //console.log(value);
+	    this.loginService.postLogin(value).subscribe(
+			(result) => {
+					console.log('Result Recieved');
+				},
+				err => {
+					console.log('this is error');
+				},
+				() => {}
+			)
 	}
 
 
