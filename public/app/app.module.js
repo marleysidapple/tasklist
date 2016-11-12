@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var common_1 = require('@angular/common');
+var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var app_routing_1 = require('./app.routing');
 var tasks_component_1 = require('./components/tasks/tasks.component');
@@ -21,7 +22,7 @@ var AppModule = (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, app_routing_1.AppRoutingModule],
+            imports: [platform_browser_1.BrowserModule, app_routing_1.AppRoutingModule, forms_1.FormsModule, forms_1.ReactiveFormsModule],
             declarations: [app_component_1.AppComponent, tasks_component_1.TasksComponent, login_component_1.LoginComponent, register_component_1.RegisterComponent],
             providers: [{ provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy }],
             bootstrap: [app_component_1.AppComponent]

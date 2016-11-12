@@ -12,11 +12,17 @@ var core_1 = require('@angular/core');
 var LoginComponent = (function () {
     function LoginComponent() {
     }
+    // Here we are implementing the submitForm function. 
+    //All we are doing for right now is spitting out the details of the form to our console.
+    LoginComponent.prototype.validateLogin = function (form) {
+        console.log('Form Data: ');
+        console.log(form);
+    };
     LoginComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
-            template: "<h2>Render Login</h2>"
+            templateUrl: './login.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], LoginComponent);
