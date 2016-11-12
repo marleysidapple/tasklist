@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var TasksComponent = (function () {
-    function TasksComponent() {
+var LoginComponent = (function () {
+    function LoginComponent() {
     }
-    TasksComponent = __decorate([
+    LoginComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
-            templateUrl: 'tasks.component.html'
+            template: "<h2>Render Login</h2>"
         }), 
         __metadata('design:paramtypes', [])
-    ], TasksComponent);
-    return TasksComponent;
+    ], LoginComponent);
+    return LoginComponent;
 }());
-exports.TasksComponent = TasksComponent;
-//# sourceMappingURL=tasks.component.js.map
+exports.LoginComponent = LoginComponent;
+//# sourceMappingURL=login.component.js.map

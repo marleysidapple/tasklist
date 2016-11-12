@@ -1,33 +1,33 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node', '/home/sid/.node/bin/npm', 'start' ]
-2 info using npm@3.9.0
-3 info using node@v6.8.1
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'start' ]
+2 info using npm@3.9.3
+3 info using node@v6.2.0
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info lifecycle tasklist@1.0.0~prestart: tasklist@1.0.0
 6 silly lifecycle tasklist@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle tasklist@1.0.0~start: tasklist@1.0.0
 8 verbose lifecycle tasklist@1.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle tasklist@1.0.0~start: PATH: /home/sid/.node/lib/node_modules/npm/bin/node-gyp-bin:/home/sid/Desktop/tasklist/public/node_modules/.bin:/usr/local/bin:/home/sid/.node/bin:/usr/local/heroku/bin:/home/sid/.node/bin:/usr/local/heroku/bin:/usr/local/heroku/bin:/home/sid/.node/bin:/usr/local/heroku/bin:/usr/local/heroku/bin:/home/sid/.rvm/gems/ruby-2.2.3/bin:/home/sid/.rvm/gems/ruby-2.2.3@global/bin:/home/sid/.rvm/rubies/ruby-2.2.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/sid/.rvm/bin:/home/sid/.composer/vendor/bin:/home/sid/bin/maven/bin:/home/sid/.rvm/bin:/home/sid/documents/activator-1.3.7-minimal/:/home/sid/.composer/vendor/bin:/home/sid/bin/maven/bin:/home/sid/.rvm/bin:/home/sid/documents/activator-1.3.7-minimal/:/home/sid/.composer/vendor/bin:/home/sid/bin/maven/bin:/home/sid/.rvm/bin:/home/sid/documents/activator-1.3.7-minimal/:/home/sid/.composer/vendor/bin:/home/sid/bin/maven/bin:/home/sid/.rvm/bin:/home/sid/documents/activator-1.3.7-minimal/::/home/sid/.composer/vendor/bin:/home/sid/bin/maven/bin:/home/sid/.rvm/bin:/home/sid/documents/activator-1.3.7-minimal/
-10 verbose lifecycle tasklist@1.0.0~start: CWD: /home/sid/Desktop/tasklist/public
+9 verbose lifecycle tasklist@1.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/mac/Desktop/tasklist/public/node_modules/.bin:/usr/local/bin:/usr/local/bin:/Users/mac/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/Users/mac/.rvm/gems/ruby-2.1.5/bin:/Users/mac/.rvm/gems/ruby-2.1.5@global/bin:/Users/mac/.rvm/rubies/ruby-2.1.5/bin:/Applications/MAMP/bin/php/php5.6.10/bin:/usr/local/mysql/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/Users/mac/.rvm/bin:/Users/mac/ .composer/vendor/bin
+10 verbose lifecycle tasklist@1.0.0~start: CWD: /Users/mac/Desktop/tasklist/public
 11 silly lifecycle tasklist@1.0.0~start: Args: [ '-c', 'tsc && concurrently "tsc -w" "lite-server" ' ]
 12 silly lifecycle tasklist@1.0.0~start: Returned: code: 2  signal: null
 13 info lifecycle tasklist@1.0.0~start: Failed to exec start script
 14 verbose stack Error: tasklist@1.0.0 start: `tsc && concurrently "tsc -w" "lite-server" `
 14 verbose stack Exit status 2
-14 verbose stack     at EventEmitter.<anonymous> (/home/sid/.node/lib/node_modules/npm/lib/utils/lifecycle.js:245:16)
+14 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:245:16)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at EventEmitter.emit (events.js:191:7)
-14 verbose stack     at ChildProcess.<anonymous> (/home/sid/.node/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+14 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
 14 verbose stack     at emitTwo (events.js:106:13)
 14 verbose stack     at ChildProcess.emit (events.js:191:7)
-14 verbose stack     at maybeClose (internal/child_process.js:877:16)
-14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
+14 verbose stack     at maybeClose (internal/child_process.js:850:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:215:5)
 15 verbose pkgid tasklist@1.0.0
-16 verbose cwd /home/sid/Desktop/tasklist/public
-17 error Linux 4.2.0-42-generic
-18 error argv "/usr/local/bin/node" "/home/sid/.node/bin/npm" "start"
-19 error node v6.8.1
-20 error npm  v3.9.0
+16 verbose cwd /Users/mac/Desktop/tasklist/public
+17 error Darwin 16.0.0
+18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
+19 error node v6.2.0
+20 error npm  v3.9.3
 21 error code ELIFECYCLE
 22 error tasklist@1.0.0 start: `tsc && concurrently "tsc -w" "lite-server" `
 22 error Exit status 2

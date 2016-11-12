@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var TasksComponent = (function () {
-    function TasksComponent() {
+var RegisterComponent = (function () {
+    function RegisterComponent() {
     }
-    TasksComponent = __decorate([
+    RegisterComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
-            templateUrl: 'tasks.component.html'
+            template: "<h2>Render Register</h2>"
         }), 
         __metadata('design:paramtypes', [])
-    ], TasksComponent);
-    return TasksComponent;
+    ], RegisterComponent);
+    return RegisterComponent;
 }());
-exports.TasksComponent = TasksComponent;
-//# sourceMappingURL=tasks.component.js.map
+exports.RegisterComponent = RegisterComponent;
+//# sourceMappingURL=register.component.js.map

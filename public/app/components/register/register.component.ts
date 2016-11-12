@@ -2,6 +2,6 @@ import { Component } from '@angular/core';
 @Component({
   moduleId: module.id,
   selector: 'my-app',
-  templateUrl: 'tasks.component.html'
+  template: `<h2>Render Register</h2>`
 })
-export class TasksComponent { }
+export class RegisterComponent { }

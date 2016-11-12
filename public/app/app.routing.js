@@ -9,26 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var common_1 = require('@angular/common');
-var app_component_1 = require('./app.component');
-var app_routing_1 = require('./app.routing');
+var router_1 = require('@angular/router');
 var tasks_component_1 = require('./components/tasks/tasks.component');
 var login_component_1 = require('./components/login/login.component');
 var register_component_1 = require('./components/register/register.component');
-var AppModule = (function () {
-    function AppModule() {
+var routes = [
+    //defining default route
+    { path: '', pathMatch: 'full', redirectTo: 'task' },
+    { path: 'task', component: tasks_component_1.TasksComponent },
+    { path: 'login', component: login_component_1.LoginComponent },
+    { path: 'register', component: register_component_1.RegisterComponent }
+];
+var AppRoutingModule = (function () {
+    function AppRoutingModule() {
     }
-    AppModule = __decorate([
+    AppRoutingModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule, app_routing_1.AppRoutingModule],
-            declarations: [app_component_1.AppComponent, tasks_component_1.TasksComponent, login_component_1.LoginComponent, register_component_1.RegisterComponent],
-            providers: [{ provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy }],
-            bootstrap: [app_component_1.AppComponent]
+            imports: [router_1.RouterModule.forRoot(routes)],
+            exports: [router_1.RouterModule]
         }), 
         __metadata('design:paramtypes', [])
-    ], AppModule);
-    return AppModule;
+    ], AppRoutingModule);
+    return AppRoutingModule;
 }());
-exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+exports.AppRoutingModule = AppRoutingModule;
+//export const routingComponents = [TasksComponent, LoginComponent, RegisterComponent];
+//# sourceMappingURL=app.routing.js.map
