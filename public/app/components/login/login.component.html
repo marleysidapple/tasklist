@@ -6,7 +6,9 @@
 			</div>
 		</div>
 
-		<div class="panel panel-body">
+
+		<!--template driven approach-->
+		<!-- <div class="panel panel-body">
 			<form #form="ngForm" (ngSubmit)="validateLogin(form.value)">
 				<div class="form-group">
 					<label>Username</label>
@@ -22,6 +24,28 @@
 			</form>
 
 			<p>Form: {{form.value | json }}</p>
+		</div> -->
+
+
+		<!--model driven apporach-->
+		<div class="panel panel-body">
+			<form [formGroup]="userLogin" (ngSubmit) = "validateLogin(userLogin.value)">
+				<div class="form-group" [ngClass]="{'has-error':!userLogin.controls['username'].valid}">
+					<label>Username</label>
+					<input type="text" class="form-control" [formControl] = "userLogin.controls['username']" >
+					<span class="help-block" *ngIf="userLogin.controls['username'].touched && !userLogin.controls['username'].valid">You must enter username.</span>
+				</div>
+
+				<div class="form-group" [ngClass]="{'has-error':!userLogin.controls['password'].valid}">
+					<label>Password</label>
+					<input type="password"  class="form-control" [formControl] = "userLogin.controls['password']">
+					<span class="help-block" *ngIf="userLogin.controls['password'].touched && !userLogin.controls['password'].valid">You must enter password.</span>
+				</div>
+
+				<button class="btn btn-default" [disabled]="!userLogin.valid">Login</button>
+			</form>
+
+			<!-- <p>Form: {{form.value | json }}</p> -->
 		</div>
 	</div>
 </div>
