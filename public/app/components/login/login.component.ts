@@ -44,7 +44,7 @@ export class LoginComponent {
 	    //console.log(value);
 	    this.loginService.postLogin(value).subscribe(
 			(result) => {
-					console.log('Result Recieved');
+					console.log('result recieved');
 				},
 				err => {
 					console.log('this is error');

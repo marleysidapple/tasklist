@@ -28,7 +28,7 @@ var LoginComponent = (function () {
         //console.log('Reactive Form Data: ');
         //console.log(value);
         this.loginService.postLogin(value).subscribe(function (result) {
-            console.log('Result Recieved');
+            console.log('result recieved');
         }, function (err) {
             console.log('this is error');
         }, function () { });

@@ -15,10 +15,10 @@ export class LoginService {
 	constructor (private _http: Http) { }
 
 	postLogin(body: Object): Observable<any>{
-		  let bodyString = JSON.stringify(body);
-         let headers = new Headers({'Content-Type': 'application/json'});
-         let options = new RequestOptions({headers: headers});
-         return this._http.post(this.url+'/auth/login', bodyString, options).map(this.extractData).catch(this.handleError);
+		 //let bodyString = JSON.stringify(body);
+         //let headers = new Headers({'Content-Type': 'application/json'});
+         //let options = new RequestOptions({headers: headers});
+         return this._http.post(this.url+'/auth/login', body).map(this.extractData).catch(this.handleError);
 	} 
 
 
