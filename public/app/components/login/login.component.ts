@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Response } from '@angular/http';
 import { LoginService } from './login.service';
@@ -28,7 +28,7 @@ export class LoginComponent {
 
 	    // The FormGroup object as you may remember from the simple form example exposes various API’s for dealing with forms. Here we are creating a new object and setting its type to FormGroup
 		  userLogin : FormGroup;
-		  users:any;
+		  @Input() users:any;
 		  loggedIn = false;
 		  errorMessage: string;
 
@@ -46,22 +46,9 @@ export class LoginComponent {
 
 
 	 validateLogin(value: any):void{
-	    //console.log(value);
-	    /*this.loginService.postLogin(value).subscribe(
-			(result) => {
-					console.log('result recieved');
-				},
-				err => {
-					console.log('this is error');
-				},
-				() => {}
-			)*/
 		this.loginService.postLogin(value).subscribe(
 			(result) => {
 					this.users = result;
-					//console.log(result);
-					//console.log(result.state);
-					
 					if (this.users.state == 'success'){
 						this.loggedIn = true;
 						this.users = result;

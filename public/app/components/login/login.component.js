@@ -28,20 +28,8 @@ var LoginComponent = (function () {
     }
     LoginComponent.prototype.validateLogin = function (value) {
         var _this = this;
-        //console.log(value);
-        /*this.loginService.postLogin(value).subscribe(
-            (result) => {
-                    console.log('result recieved');
-                },
-                err => {
-                    console.log('this is error');
-                },
-                () => {}
-            )*/
         this.loginService.postLogin(value).subscribe(function (result) {
             _this.users = result;
-            //console.log(result);
-            //console.log(result.state);
             if (_this.users.state == 'success') {
                 _this.loggedIn = true;
                 _this.users = result;
@@ -55,6 +43,10 @@ var LoginComponent = (function () {
             console.log('this is an error');
         }, function () { });
     };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], LoginComponent.prototype, "users", void 0);
     LoginComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
