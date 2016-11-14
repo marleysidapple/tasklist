@@ -4,6 +4,7 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
+import { User } from './user';
 
 
 @Injectable()
@@ -14,7 +15,7 @@ export class LoginService {
 
 	constructor (private _http: Http) { }
 
-	postLogin(body: Object): Observable<any>{
+	postLogin(body: Object): Observable<User[]>{
 		 //let bodyString = JSON.stringify(body);
          //let headers = new Headers({'Content-Type': 'application/json'});
          //let options = new RequestOptions({headers: headers});
@@ -27,7 +28,7 @@ export class LoginService {
        // console.log(body.token);
         //localStorage.setItem('auth_token', body.token);
 		//this.loggedIn = true;
-        return body.data || {};
+        return body || {};
     }
 
 

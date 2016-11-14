@@ -29,7 +29,7 @@ var LoginService = (function () {
         // console.log(body.token);
         //localStorage.setItem('auth_token', body.token);
         //this.loggedIn = true;
-        return body.data || {};
+        return body || {};
     };
     LoginService.prototype.handleError = function (error) {
         // In a real world app, we might use a remote logging infrastructure

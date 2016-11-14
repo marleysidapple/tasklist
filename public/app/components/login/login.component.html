@@ -28,7 +28,11 @@
 
 
 		<!--model driven apporach-->
+
 		<div class="panel panel-body">
+			<div class="alert alert-danger" *ngIf="errorMessage">
+				<span>{{ errorMessage }}</span>
+			</div>
 			<form [formGroup]="userLogin" (ngSubmit) = "validateLogin(userLogin.value)">
 				<div class="form-group" [ngClass]="{'has-error':!userLogin.controls['username'].valid}">
 					<label>Username</label>
