@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Response } from '@angular/http';
 import { LoginService } from './login.service';
@@ -10,7 +10,7 @@ import { Router, RouterModule } from '@angular/router';
   templateUrl: './login.component.html',
   providers: [LoginService]
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
 
 	/*
@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
 		  users:any;
 		  loggedIn = false;
 		  errorMessage: string;
+
 
 		  // We are passing an instance of the FormBuilder to our constructor
 		  constructor(fb: FormBuilder, private loginService: LoginService, private _router: Router){
@@ -57,10 +58,11 @@ export class LoginComponent implements OnInit {
 			)*/
 		this.loginService.postLogin(value).subscribe(
 			(result) => {
-					// this.user = result;
-					// console.log(result);
+					this.users = result;
+					//console.log(result);
 					//console.log(result.state);
-					if (result.state == 'success'){
+					
+					if (this.users.state == 'success'){
 						this.loggedIn = true;
 						this.users = result;
 						localStorage.setItem("userdata", JSON.stringify(this.users));

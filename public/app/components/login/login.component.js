@@ -39,10 +39,10 @@ var LoginComponent = (function () {
                 () => {}
             )*/
         this.loginService.postLogin(value).subscribe(function (result) {
-            // this.user = result;
-            // console.log(result);
+            _this.users = result;
+            //console.log(result);
             //console.log(result.state);
-            if (result.state == 'success') {
+            if (_this.users.state == 'success') {
                 _this.loggedIn = true;
                 _this.users = result;
                 localStorage.setItem("userdata", JSON.stringify(_this.users));
