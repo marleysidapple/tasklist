@@ -43,16 +43,11 @@ var LoginComponent = (function () {
             console.log('this is an error');
         }, function () { });
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], LoginComponent.prototype, "users", void 0);
     LoginComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
             templateUrl: './login.component.html',
-            providers: [login_service_1.LoginService]
         }), 
         __metadata('design:paramtypes', [forms_1.FormBuilder, login_service_1.LoginService, router_1.Router])
     ], LoginComponent);

@@ -8,7 +8,6 @@ import { Router, RouterModule } from '@angular/router';
   moduleId: module.id,
   selector: 'my-app',
   templateUrl: './login.component.html',
-  providers: [LoginService]
 })
 export class LoginComponent {
 
@@ -28,7 +27,7 @@ export class LoginComponent {
 
 	    // The FormGroup object as you may remember from the simple form example exposes various API’s for dealing with forms. Here we are creating a new object and setting its type to FormGroup
 		  userLogin : FormGroup;
-		  @Input() users:any;
+		  users:any;
 		  loggedIn = false;
 		  errorMessage: string;
 

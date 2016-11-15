@@ -19,7 +19,7 @@ import { LoginService } from './components/login/login.service';
 @NgModule({
   imports:      [ BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpModule],
   declarations: [ AppComponent, TasksComponent, LoginComponent, RegisterComponent, HeaderComponent ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, LoginService],
+  providers: 	[{provide: LocationStrategy, useClass: HashLocationStrategy}, LoginService],
   bootstrap:    [ AppComponent ]
 })
 
