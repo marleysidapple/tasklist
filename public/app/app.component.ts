@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   templateUrl: 'layout.component.html',
 })
-export class AppComponent { 
-
-}
+export class AppComponent { }
