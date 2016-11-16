@@ -18,7 +18,8 @@ var routes = [
     { path: '', pathMatch: 'full', redirectTo: 'task' },
     { path: 'task', component: tasks_component_1.TasksComponent },
     { path: 'login', component: login_component_1.LoginComponent },
-    { path: 'register', component: register_component_1.RegisterComponent }
+    { path: 'register', component: register_component_1.RegisterComponent },
+    { path: 'logout', component: login_component_1.LoginComponent },
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

@@ -42,4 +42,11 @@ export class LoginService {
         return Observable.throw(errMsg);
     }
 
+
+    logout(){
+        localStorage.removeItem('userdata');
+        return this._http.get(this.url + '/auth/logout').map(this.extractData).catch(this.handleError);
+        // remove user from local storage to log user out
+    }
+
 }

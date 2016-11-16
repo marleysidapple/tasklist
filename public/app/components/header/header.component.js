@@ -9,8 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var login_service_1 = require('../login/login.service');
 var HeaderComponent = (function () {
-    function HeaderComponent() {
+    function HeaderComponent(loginService) {
+        this.loginService = loginService;
+        this.users = [];
+        this.currentUser = JSON.parse(localStorage.getItem('userdata'));
     }
     HeaderComponent = __decorate([
         core_1.Component({
@@ -18,7 +22,7 @@ var HeaderComponent = (function () {
             selector: 'header',
             templateUrl: './header.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [login_service_1.LoginService])
     ], HeaderComponent);
     return HeaderComponent;
 }());

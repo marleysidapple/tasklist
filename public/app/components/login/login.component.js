@@ -25,6 +25,10 @@ var LoginComponent = (function () {
             'username': [null, forms_1.Validators.required],
             'password': [null, forms_1.Validators.required],
         });
+        //if user is already logged in, then we are routing that user back to task   
+        /* if(this.users != ""){
+             this._router.navigateByUrl('task');
+         }*/
     }
     LoginComponent.prototype.validateLogin = function (value) {
         var _this = this;

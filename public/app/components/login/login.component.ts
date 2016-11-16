@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Response } from '@angular/http';
 import { LoginService } from './login.service';
@@ -41,6 +41,11 @@ export class LoginComponent {
 		      'username' : [null, Validators.required],
 		      'password': [null, Validators.required],
 		    })
+
+		    //if user is already logged in, then we are routing that user back to task   
+		   /* if(this.users != ""){
+		    	this._router.navigateByUrl('task');
+		    }*/
 		  }
 
 
@@ -66,6 +71,10 @@ export class LoginComponent {
 			);
 			
 	}
+
+
+
+	
 
 
  }

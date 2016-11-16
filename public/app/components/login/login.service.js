@@ -39,6 +39,11 @@ var LoginService = (function () {
         //console.log(errMsg); // log to console instead
         return Rx_1.Observable.throw(errMsg);
     };
+    LoginService.prototype.logout = function () {
+        localStorage.removeItem('userdata');
+        return this._http.get(this.url + '/auth/logout').map(this.extractData).catch(this.handleError);
+        // remove user from local storage to log user out
+    };
     LoginService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
