@@ -40,6 +40,7 @@ var LoginService = (function () {
         return Rx_1.Observable.throw(errMsg);
     };
     LoginService.prototype.logout = function () {
+        console.log('clicked logout');
         localStorage.removeItem('userdata');
         return this._http.get(this.url + '/auth/logout').map(this.extractData).catch(this.handleError);
         // remove user from local storage to log user out

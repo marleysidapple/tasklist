@@ -44,6 +44,7 @@ export class LoginService {
 
 
     logout(){
+        console.log('clicked logout');
         localStorage.removeItem('userdata');
         return this._http.get(this.url + '/auth/logout').map(this.extractData).catch(this.handleError);
         // remove user from local storage to log user out
