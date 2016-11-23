@@ -27,9 +27,7 @@ export class LoginComponent {
 
 	    // The FormGroup object as you may remember from the simple form example exposes various API’s for dealing with forms. Here we are creating a new object and setting its type to FormGroup
 		  userLogin : FormGroup;
-		  users:any;
-		  loggedIn = false;
-		  errorMessage: string;
+		  err: string;
 
 
 		  // We are passing an instance of the FormBuilder to our constructor
@@ -52,15 +50,16 @@ export class LoginComponent {
 	 validateLogin(value: any):void{
 		this.loginService.postLogin(value).subscribe(
 			(result) => {
-					this.users = result;
-					if (this.users.state == 'success'){
-						this.loggedIn = true;
-						this.users = result;
-						localStorage.setItem("userdata", JSON.stringify(this.users));
+					if (result){
 						this._router.navigateByUrl('task');
-					} else{
-						this.errorMessage = 'Invalid username/password combination';
+					} else {
+						this.err = this.loginService.errorMessage;
 					}
+					/*if (this.loginService.isLoggedIn){
+						this._router.navigateByUrl('task');
+					} else {
+						this.err = this.loginService.errorMessage;
+					}*/
 
 				},
 
@@ -71,9 +70,6 @@ export class LoginComponent {
 			);
 			
 	}
-
-
-
 	
 
 

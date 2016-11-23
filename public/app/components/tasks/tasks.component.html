@@ -1,10 +1,17 @@
-<form class="well">
-	<div class="form-group">
-		<input type="text" class="form-control" placeholder="Add Task..">
-	</div>
-</form>
 
 
-<div class="task-list">
-	<div class="col-md-1">
-</div>
+<table class="table table-bordered table-hover">
+	<tr>
+		<th>S.no</th>
+		<th>Name</th>
+		<th>Completed</th>
+		<th>Action</th>
+	</tr>
+
+	<tr *ngFor="let task of tasks; let i = index" [attr.data-index]="i">
+		<td>{{i+1}}</td>
+		<td>{{task.title}}</td>
+		<td>{{task.isDone}}</td>
+		<td></td>
+	</tr>
+</table>

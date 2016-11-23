@@ -16,7 +16,7 @@ var register_component_1 = require('./components/register/register.component');
 var routes = [
     //defining default route
     { path: '', pathMatch: 'full', redirectTo: 'task' },
-    { path: 'task', component: tasks_component_1.TasksComponent },
+    { path: 'tasklist', component: tasks_component_1.TasksComponent },
     { path: 'login', component: login_component_1.LoginComponent },
     { path: 'register', component: register_component_1.RegisterComponent },
     { path: 'logout', component: login_component_1.LoginComponent },

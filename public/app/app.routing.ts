@@ -8,7 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 const routes:Routes = [
 	//defining default route
 	{path: '', pathMatch: 'full', redirectTo: 'task'},
-	{path: 'task', component: TasksComponent},
+	{path: 'tasklist', component: TasksComponent},
 	{path: 'login', component: LoginComponent},
 	{path: 'register', component: RegisterComponent},
 	{path: 'logout', component: LoginComponent},

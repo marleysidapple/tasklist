@@ -15,19 +15,18 @@ var HeaderComponent = (function () {
     function HeaderComponent(loginService, _router) {
         this.loginService = loginService;
         this._router = _router;
-        this.users = [];
-        this.currentUser = JSON.parse(localStorage.getItem('userdata'));
+        this.isAuth = false;
     }
     HeaderComponent.prototype.logout = function () {
-        this.loginService.logout();
-        this._router.navigateByUrl('login');
-        location.reload();
+        this.loginService.logout().subscribe(function (result) {
+            console.log('user loggedout successfully');
+        });
     };
     HeaderComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'header',
-            templateUrl: './header.component.html'
+            templateUrl: './header.component.html',
         }), 
         __metadata('design:paramtypes', [login_service_1.LoginService, router_1.Router])
     ], HeaderComponent);

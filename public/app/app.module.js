@@ -20,6 +20,7 @@ var login_component_1 = require('./components/login/login.component');
 var register_component_1 = require('./components/register/register.component');
 var header_component_1 = require('./components/header/header.component');
 var login_service_1 = require('./components/login/login.service');
+var task_service_1 = require('./components/tasks/task.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -27,7 +28,7 @@ var AppModule = (function () {
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, app_routing_1.AppRoutingModule, forms_1.FormsModule, forms_1.ReactiveFormsModule, http_1.HttpModule],
             declarations: [app_component_1.AppComponent, tasks_component_1.TasksComponent, login_component_1.LoginComponent, register_component_1.RegisterComponent, header_component_1.HeaderComponent],
-            providers: [{ provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy }, login_service_1.LoginService],
+            providers: [{ provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy }, login_service_1.LoginService, task_service_1.TaskService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

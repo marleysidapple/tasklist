@@ -9,16 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var task_service_1 = require('./task.service');
 var TasksComponent = (function () {
-    function TasksComponent() {
+    function TasksComponent(taskService) {
+        this.taskService = taskService;
     }
+    TasksComponent.prototype.ngOnInit = function () {
+        this.getAllTask();
+    };
+    TasksComponent.prototype.getAllTask = function () {
+        var _this = this;
+        // Get all comments
+        this.taskService.allTask()
+            .subscribe(function (tasks) { return _this.tasks = tasks; }, //Bind to view
+        function (//Bind to view
+            err) {
+            // Log errors if any
+            console.log(err);
+        });
+    };
     TasksComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-app',
             templateUrl: 'tasks.component.html'
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [task_service_1.TaskService])
     ], TasksComponent);
     return TasksComponent;
 }());

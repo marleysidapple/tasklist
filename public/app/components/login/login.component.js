@@ -17,7 +17,6 @@ var LoginComponent = (function () {
     function LoginComponent(fb, loginService, _router) {
         this.loginService = loginService;
         this._router = _router;
-        this.loggedIn = false;
         // Here we are using the FormBuilder to build out our form.
         this.userLogin = fb.group({
             // We can set default values by passing in the corresponding value or leave blank if we wish to not set the value. For our example, we’ll default the gender to female.
@@ -33,16 +32,17 @@ var LoginComponent = (function () {
     LoginComponent.prototype.validateLogin = function (value) {
         var _this = this;
         this.loginService.postLogin(value).subscribe(function (result) {
-            _this.users = result;
-            if (_this.users.state == 'success') {
-                _this.loggedIn = true;
-                _this.users = result;
-                localStorage.setItem("userdata", JSON.stringify(_this.users));
+            if (result) {
                 _this._router.navigateByUrl('task');
             }
             else {
-                _this.errorMessage = 'Invalid username/password combination';
+                _this.err = _this.loginService.errorMessage;
             }
+            /*if (this.loginService.isLoggedIn){
+                this._router.navigateByUrl('task');
+            } else {
+                this.err = this.loginService.errorMessage;
+            }*/
         }, function (err) {
             console.log('this is an error');
         }, function () { });
