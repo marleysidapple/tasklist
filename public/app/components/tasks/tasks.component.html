@@ -1,6 +1,6 @@
 
 
-<table class="table table-bordered table-hover">
+<table class="table table-bordered table-hover" id="myTable">
 	<tr>
 		<th>S.no</th>
 		<th>Name</th>
@@ -12,6 +12,6 @@
 		<td>{{i+1}}</td>
 		<td>{{task.title}}</td>
 		<td>{{task.isDone}}</td>
-		<td></td>
+		<td><a [routerLink] = "['edit/', task._id]" (click) = "editTask(task._id)" class="btn btn-primary btn-sm">Edit</a></td>
 	</tr>
 </table>

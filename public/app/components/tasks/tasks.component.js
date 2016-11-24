@@ -28,6 +28,9 @@ var TasksComponent = (function () {
             console.log(err);
         });
     };
+    TasksComponent.prototype.editTask = function () {
+        console.log('clicked');
+    };
     TasksComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

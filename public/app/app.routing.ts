@@ -9,6 +9,7 @@ const routes:Routes = [
 	//defining default route
 	{path: '', pathMatch: 'full', redirectTo: 'task'},
 	{path: 'tasklist', component: TasksComponent},
+	{path: 'tasklist/edit/:id', component: TasksComponent},
 	{path: 'login', component: LoginComponent},
 	{path: 'register', component: RegisterComponent},
 	{path: 'logout', component: LoginComponent},
